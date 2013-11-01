@@ -1,0 +1,188 @@
+#N canvas 1414 7 1402 824 10;
+#X obj -65 147 alpha;
+#X obj -33 -231 pix_video;
+#X obj -57 -46 pix_texture;
+#X obj -64 171 depth;
+#X obj -45 -192 pix_threshold;
+#X obj -21 -306 t b b;
+#X floatatom 34 -219 5 0 100 2 - - -;
+#X obj 5 -348 tgl 15 0 empty empty run 0 -6 0 10 -4034 -1 -1 1 1;
+#X obj 37 -241 hsl 128 15 0 1 0 0 empty empty empty -2 -6 0 10 -228856
+-1 -1 500 1;
+#X obj -55 -129 hsl 128 15 0 1 0 1 empty empty R 12 8 1 12 -261689
+-1 -1 12700 1;
+#X obj -55 -109 hsl 128 15 0 1 0 1 empty empty G 12 8 1 12 -225271
+-1 -1 12700 1;
+#X obj -55 -89 hsl 128 15 0 1 0 1 empty empty B 12 8 1 12 -228992 -1
+-1 12700 1;
+#X obj 321 -369 bng 15 250 50 0 empty empty empty 0 -6 0 10 -128992
+-1 -1;
+#X obj -55 -69 hsl 128 15 0 1 0 1 empty empty A 12 8 1 12 -195568 -1
+-1 12700 1;
+#X obj -52 11 colorRGB 1 1 1 0.15;
+#N canvas 473 33 247 84 Gem.init 0;
+#X obj 118 46 loadbang;
+#X obj 118 113 outlet;
+#X msg 118 81 reset \, buffer 1;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X restore 198 -375 pd Gem.init;
+#N canvas 340 107 682 322 gemwin 0;
+#X obj 102 122 tgl 15 0 \$0-gemstart \$0-gemstart empty 17 7 0 10 -262144
+-1 -1 0 1;
+#X obj 102 161 r \$0-gemstart;
+#X obj 102 182 select 1 0;
+#X msg 102 214 create \, 1;
+#X msg 177 215 destroy;
+#X obj 102 239 t a;
+#X obj 318 54 inlet;
+#X obj 318 255 gemwin;
+#X obj 318 100 t a a;
+#X obj 318 287 outlet;
+#X obj 350 128 route create destroy;
+#X obj 350 150 t b;
+#X msg 350 172 1;
+#X obj 390 150 t b;
+#X msg 390 172 0;
+#X obj 350 195 t f;
+#X msg 350 219 set \$1;
+#X text 118 122 rendering;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 2 1 4 0;
+#X connect 3 0 5 0;
+#X connect 4 0 5 0;
+#X connect 5 0 8 0;
+#X connect 6 0 8 0;
+#X connect 7 0 9 0;
+#X connect 8 0 7 0;
+#X connect 8 1 10 0;
+#X connect 10 0 11 0;
+#X connect 10 1 13 0;
+#X connect 11 0 12 0;
+#X connect 12 0 15 0;
+#X connect 13 0 14 0;
+#X connect 14 0 15 0;
+#X connect 15 0 16 0;
+#X connect 16 0 0 0;
+#X coords 0 -1 1 1 85 40 1 100 100;
+#X restore 178 -347 pd gemwin;
+#X msg 36 -296 dialog;
+#X msg 85 -319 enumerate;
+#X msg 114 -271 close;
+#X msg 92 -291 open 1;
+#X obj 34 -343 hsl 128 15 10 127 0 1 empty empty empty -2 -6 0 10 -204786
+-1 -1 100 1;
+#X floatatom 45 -317 5 0 0 0 - - -;
+#X obj -21 -328 metro;
+#X msg 30 -368 100;
+#X obj 260 109 hsl 128 15 0.5 20 0 0 empty empty empty -2 -6 0 10 -232576
+-1 -1 0 1;
+#X floatatom 259 141 5 0 0 0 - - -;
+#X obj 193 190 rectangle;
+#X obj 260 163 hsl 128 15 0.5 20 0 0 empty empty empty -2 -6 0 10 -232576
+-1 -1 0 1;
+#X floatatom 257 187 5 0 0 0 - - -;
+#X obj 259 208 hsl 128 15 0.5 5 0 1 empty empty empty -2 -6 0 10 -232576
+-1 -1 6433 1;
+#X floatatom 256 231 5 0 0 1 size - -;
+#X obj 254 252 hsl 128 15 5 50 0 1 empty empty empty -2 -6 0 10 -204800
+-1 -1 2600 1;
+#X floatatom 256 271 5 0 0 1 segments - -;
+#X obj 184 273 sphere;
+#X obj 85 88 hsl 128 15 0 360 0 0 empty empty Z 12 8 1 12 -233017 -1
+-1 0 1;
+#X obj -20 117 rotateXYZ 0 0 0;
+#X obj 87 45 hsl 128 15 0 360 0 0 empty empty X 12 8 1 12 -233017 -1
+-1 0 1;
+#X obj 87 65 hsl 128 15 0 360 0 0 empty empty Y 12 8 1 12 -233017 -1
+-1 0 1;
+#X obj 101 109 hsl 128 15 0.5 20 0 0 empty empty empty -2 -6 0 10 -232576
+-1 -1 4900 1;
+#X floatatom 100 144 5 0 0 0 - - -;
+#X obj 101 166 hsl 128 15 0.5 20 0 0 empty empty empty -2 -6 0 10 -232576
+-1 -1 0 1;
+#X floatatom 98 190 5 0 0 0 - - -;
+#X obj 34 193 cube;
+#X obj 95 -223 somepixeffects;
+#X msg 316 -238 snap;
+#X obj 316 -291 gemhead 15;
+#X obj 316 -99 rotateXYZ;
+#X obj 353 -122 hsl 128 15 -34 34 0 0 empty empty empty -2 -6 0 8 -261879
+-1 -1 8000 1;
+#X obj 316 -205 pix_snap2tex 0 0 512 512;
+#X msg 350 -143 0;
+#X obj 350 -164 loadbang;
+#X obj 316 -267 trigger bang anything;
+#X obj 353 -346 gemwin;
+#X msg 352 -375 create;
+#X msg 407 -377 destroy;
+#X obj -39 -279 gemhead 10;
+#X floatatom 393 -96 5 0 0 0 - - -;
+#X obj 316 -59 rectangle;
+#X floatatom 432 -99 5 0 0 0 - - -;
+#X obj 607 -160 counter 0 360;
+#X obj 604 -194 metro 100;
+#X obj 605 -221 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
+1 1;
+#X floatatom 608 -128 5 0 0 0 - - -;
+#X floatatom 664 -218 5 0 0 0 - - -;
+#X connect 0 0 3 0;
+#X connect 1 0 4 0;
+#X connect 2 0 14 0;
+#X connect 3 0 43 0;
+#X connect 3 0 34 0;
+#X connect 4 0 44 0;
+#X connect 5 0 56 0;
+#X connect 6 0 4 1;
+#X connect 7 0 23 0;
+#X connect 8 0 6 0;
+#X connect 9 0 14 1;
+#X connect 10 0 14 2;
+#X connect 11 0 14 3;
+#X connect 12 0 53 0;
+#X connect 13 0 14 4;
+#X connect 14 0 36 0;
+#X connect 17 0 1 0;
+#X connect 18 0 1 0;
+#X connect 19 0 1 0;
+#X connect 20 0 1 0;
+#X connect 21 0 22 0;
+#X connect 21 0 23 1;
+#X connect 23 0 5 0;
+#X connect 24 0 21 0;
+#X connect 25 0 26 0;
+#X connect 25 0 27 1;
+#X connect 28 0 29 0;
+#X connect 28 0 27 2;
+#X connect 30 0 31 0;
+#X connect 30 0 34 1;
+#X connect 32 0 33 0;
+#X connect 32 0 34 2;
+#X connect 35 0 36 3;
+#X connect 36 0 0 0;
+#X connect 37 0 36 1;
+#X connect 38 0 36 2;
+#X connect 39 0 40 0;
+#X connect 39 0 43 1;
+#X connect 41 0 42 0;
+#X connect 44 0 2 0;
+#X connect 45 0 49 0;
+#X connect 46 0 52 0;
+#X connect 47 0 58 0;
+#X connect 48 0 47 2;
+#X connect 49 0 47 0;
+#X connect 50 0 48 0;
+#X connect 51 0 50 0;
+#X connect 52 0 45 0;
+#X connect 52 1 49 0;
+#X connect 54 0 53 0;
+#X connect 55 0 53 0;
+#X connect 56 0 1 0;
+#X connect 57 0 58 1;
+#X connect 59 0 58 2;
+#X connect 60 0 63 0;
+#X connect 61 0 60 0;
+#X connect 62 0 61 0;
+#X connect 63 0 47 1;
+#X connect 64 0 61 1;
